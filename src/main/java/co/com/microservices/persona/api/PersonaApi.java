@@ -35,7 +35,7 @@ public interface PersonaApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Void> addPersona(@ApiParam(value = "Person object that needs to be added to the store" ,required=true )  @Valid @RequestBody Persona body);
+    ResponseEntity<?> addPersona(@ApiParam(value = "Person object that needs to be added to the store" ,required=true )  @Valid @RequestBody Persona body);
 
 
     @ApiOperation(value = "Delete an existing Person", nickname = "deletePerson", notes = "", tags={ "MicroservicePersona", })
@@ -47,7 +47,7 @@ public interface PersonaApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.DELETE)
-    ResponseEntity<Void> deletePerson(@ApiParam(value = "Person object that needs to be added to the store" ,required=true )  @Valid @RequestBody GeneralRequest body);
+    ResponseEntity<?> deletePerson(@ApiParam(value = "Person object that needs to be added to the store" ,required=true )  @Valid @RequestBody GeneralRequest body);
 
 
     @ApiOperation(value = "Finds Persons by Correo", nickname = "findPersonByCorreo", notes = "Seleccionar personas por CORREO", response = List.class, tags={ "MicroservicePersona", })
@@ -79,6 +79,6 @@ public interface PersonaApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<Void> updatePerson(@ApiParam(value = "Person object that needs to be added to the store" ,required=true )  @Valid @RequestBody Persona body);
+    ResponseEntity<?> updatePerson(@ApiParam(value = "Person object that needs to be added to the store" ,required=true )  @Valid @RequestBody Persona body);
 
 }
