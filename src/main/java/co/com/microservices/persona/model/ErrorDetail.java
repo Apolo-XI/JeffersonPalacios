@@ -22,9 +22,6 @@ public class ErrorDetail   {
   @JsonProperty("detail")
   private String detail = null;
 
-  @JsonProperty("id")
-  private String id = null;
-
   @JsonProperty("source")
   private String source = null;
 
@@ -76,26 +73,6 @@ public class ErrorDetail   {
     this.detail = detail;
   }
 
-  public ErrorDetail id(String id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   * @return id
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
 
   public ErrorDetail source(String source) {
     this.source = source;
@@ -172,7 +149,6 @@ public class ErrorDetail   {
     ErrorDetail errorDetail = (ErrorDetail) o;
     return Objects.equals(this.code, errorDetail.code) &&
         Objects.equals(this.detail, errorDetail.detail) &&
-        Objects.equals(this.id, errorDetail.id) &&
         Objects.equals(this.source, errorDetail.source) &&
         Objects.equals(this.status, errorDetail.status) &&
         Objects.equals(this.title, errorDetail.title);
@@ -180,7 +156,7 @@ public class ErrorDetail   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, detail, id, source, status, title);
+    return Objects.hash(code, detail, source, status, title);
   }
 
   @Override
@@ -190,7 +166,6 @@ public class ErrorDetail   {
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");

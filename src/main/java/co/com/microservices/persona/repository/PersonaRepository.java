@@ -10,6 +10,7 @@ import co.com.microservices.persona.model.Persona;
 
 @EnableScan
 public interface PersonaRepository extends CrudRepository<Persona, String>{
-	public List<Persona> findByCorreo(String correo);
+	public List<Persona> findByEmail(String correo);
 	public List<Persona> findById(String id);
+	public List<Persona> findByEmailAndPass(String email, String pass);
 }

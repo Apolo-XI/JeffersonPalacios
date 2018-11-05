@@ -59,6 +59,16 @@ public interface PersonaApi {
         method = RequestMethod.GET)
     ResponseEntity<?> findPersonByCorreo(@ApiParam(value = "Correo de la persona", required = true) @RequestParam ("correo") String correo);
 
+    
+    @ApiOperation(value = "Finds all Persons", nickname = "findAll", notes = "Seleccionar todas las personas", response = List.class, tags={ "MicroservicePersona", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "successful operation", response = List.class),
+        @ApiResponse(code = 400, message = "Invalid status value") })
+    @RequestMapping(value = "/persona",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    ResponseEntity<?> findAll();
+    
 
     @ApiOperation(value = "Finds Persons by Id", nickname = "findPersonById", notes = "Seleccionar personas por ID", response = List.class, tags={ "MicroservicePersona", })
     @ApiResponses(value = { 
@@ -70,6 +80,16 @@ public interface PersonaApi {
     ResponseEntity<?> findPersonById(@ApiParam(value = "Id de la persona", required = true) @RequestParam ("id") String id);
 
 
+    @ApiOperation(value = "Validate login with email and pass", nickname = "validateLogin", notes = "Validar el login con email y pass", response = Persona.class, tags={ "MicroservicePersona", })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "successful operation", response = List.class),
+        @ApiResponse(code = 400, message = "Invalid status value") })
+    @RequestMapping(value = "/persona/validateLogin",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    ResponseEntity<?> validateLogin(@ApiParam(value = "Email de la persona", required = true) @RequestParam ("email") String email, @ApiParam(value = "Pass de la persona", required = true) @RequestParam ("pass") String pass) throws Exception;
+    
+    
     @ApiOperation(value = "Update an existing Person", nickname = "updatePerson", notes = "", tags={ "MicroservicePersona", })
     @ApiResponses(value = { 
         @ApiResponse(code = 400, message = "Invalid ID supplied"),

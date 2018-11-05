@@ -24,8 +24,8 @@ public class Persona   {
   @JsonProperty("id")
   private String id = null;
 
-  @JsonProperty("nombres")
-  private String nombres = null;
+  @JsonProperty("name")
+  private String name = null;
 
   @JsonProperty("apellidos")
   private String apellidos = null;
@@ -36,8 +36,8 @@ public class Persona   {
   @JsonProperty("direccion")
   private String direccion = null;
 
-  @JsonProperty("correo")
-  private String correo = null;
+  @JsonProperty("email")
+  private String email = null;
 
   @JsonProperty("pass")
   private String pass = null;
@@ -72,25 +72,25 @@ public class Persona   {
     this.id = id;
   }
 
-  public Persona nombres(String nombres) {
-    this.nombres = nombres;
+  public Persona name(String name) {
+    this.name = name;
     return this;
   }
 
   /**
-   * Get nombres
-   * @return nombres
+   * Get name
+   * @return name
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
   @DynamoDBAttribute
-  public String getNombres() {
-    return nombres;
+  public String getName() {
+    return name;
   }
 
-  public void setNombres(String nombres) {
-    this.nombres = nombres;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public Persona apellidos(String apellidos) {
@@ -154,25 +154,25 @@ public class Persona   {
     this.direccion = direccion;
   }
   
-  public Persona correo(String correo) {
-    this.correo = correo;
+  public Persona email(String email) {
+    this.email = email;
     return this;
   }
 
   /**
-   * Get correo
-   * @return correo
+   * Get email
+   * @return email
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
   @DynamoDBAttribute
-  public String getCorreo() {
-    return correo;
+  public String getEmail() {
+    return email;
   }
 
-  public void setCorreo(String correo) {
-    this.correo = correo;
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public Persona pass(String pass) {
@@ -269,11 +269,11 @@ public class Persona   {
     }
     Persona persona = (Persona) o;
     return Objects.equals(this.id, persona.id) &&
-        Objects.equals(this.nombres, persona.nombres) &&
+        Objects.equals(this.name, persona.name) &&
         Objects.equals(this.apellidos, persona.apellidos) &&
         Objects.equals(this.telefono, persona.telefono) &&
         Objects.equals(this.direccion, persona.direccion) &&
-        Objects.equals(this.correo, persona.correo) &&
+        Objects.equals(this.email, persona.email) &&
         Objects.equals(this.pass, persona.pass) &&
         Objects.equals(this.rol, persona.rol) &&
         Objects.equals(this.genero, persona.genero) &&
@@ -282,7 +282,7 @@ public class Persona   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, nombres, apellidos, telefono, direccion, correo, pass, rol, genero, estado);
+    return Objects.hash(id, name, apellidos, telefono, direccion, email, pass, rol, genero, estado);
   }
 
   @Override
@@ -291,11 +291,11 @@ public class Persona   {
     sb.append("class Persona {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    nombres: ").append(toIndentedString(nombres)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    apellidos: ").append(toIndentedString(apellidos)).append("\n");
     sb.append("    telefono: ").append(toIndentedString(telefono)).append("\n");
     sb.append("    direccion: ").append(toIndentedString(direccion)).append("\n");
-    sb.append("    correo: ").append(toIndentedString(correo)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    pass: ").append(toIndentedString(pass)).append("\n");
     sb.append("    rol: ").append(toIndentedString(rol)).append("\n");
     sb.append("    genero: ").append(toIndentedString(genero)).append("\n");

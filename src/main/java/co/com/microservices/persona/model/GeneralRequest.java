@@ -19,8 +19,8 @@ public class GeneralRequest   {
   @JsonProperty("parametro")
   private String parametro = null;
 
-  @JsonProperty("parametro2")
-  private String parametro2 = null;
+  @JsonProperty("response")
+  private String response = null;
 
   public GeneralRequest parametro(String parametro) {
     this.parametro = parametro;
@@ -31,7 +31,8 @@ public class GeneralRequest   {
    * Get parametro
    * @return parametro
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
 
   public String getParametro() {
@@ -42,24 +43,24 @@ public class GeneralRequest   {
     this.parametro = parametro;
   }
 
-  public GeneralRequest parametro2(String parametro2) {
-    this.parametro2 = parametro2;
+  public GeneralRequest response(String response) {
+    this.response = response;
     return this;
   }
 
   /**
-   * Get parametro2
-   * @return parametro2
+   * Get response
+   * @return response
   **/
   @ApiModelProperty(value = "")
 
 
-  public String getParametro2() {
-    return parametro2;
+  public String getResponse() {
+    return response;
   }
 
-  public void setParametro2(String parametro2) {
-    this.parametro2 = parametro2;
+  public void setResponse(String response) {
+    this.response = response;
   }
 
 
@@ -73,12 +74,12 @@ public class GeneralRequest   {
     }
     GeneralRequest generalRequest = (GeneralRequest) o;
     return Objects.equals(this.parametro, generalRequest.parametro) &&
-        Objects.equals(this.parametro2, generalRequest.parametro2);
+        Objects.equals(this.response, generalRequest.response);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(parametro, parametro2);
+    return Objects.hash(parametro, response);
   }
 
   @Override
@@ -87,7 +88,7 @@ public class GeneralRequest   {
     sb.append("class GeneralRequest {\n");
     
     sb.append("    parametro: ").append(toIndentedString(parametro)).append("\n");
-    sb.append("    parametro2: ").append(toIndentedString(parametro2)).append("\n");
+    sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");
     return sb.toString();
   }
